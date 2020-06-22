@@ -9,6 +9,7 @@
         xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 1007.478 527.323"
         xml:space="preserve"
+        @click="selectProvince"
       >
         <g id="turkiye">
           <g id="adana" data-plakakodu="01" data-alankodu="322" data-iladi="Adana">
@@ -461,6 +462,14 @@ export default {
     return {
       isim: "Türkiye Cumhuriyeti"
     };
+  },
+  methods: {
+    selectProvince(event) {
+      if (event.target.tagName === "path") {
+        const parent = event.target.parentNode;
+        const provinceName = parent.getAttribute("data-iladi");
+      }
+    }
   }
 };
 </script>
