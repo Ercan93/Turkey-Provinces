@@ -11,6 +11,8 @@
         xml:space="preserve"
         @click="selectProvince"
         @mouseover="showProvinceName"
+        @mousemove="moveOnMap"
+        @mouseout="clearTempName"
       >
         <g id="turkiye">
           <g id="adana" data-plakakodu="01" data-alankodu="322" data-iladi="Adana">
@@ -462,7 +464,12 @@ export default {
   data() {
     return {
       province_name: null,
-      temp_province_name: null
+      temp_province_name: null,
+      province_temp_show: {
+        left: "0px",
+        top: "0px"
+      },
+      showName: false
     };
   },
   methods: {
@@ -479,6 +486,16 @@ export default {
         const provinceName = parent.getAttribute("data-iladi");
         this.temp_province_name = provinceName;
       }
+    },
+    moveOnMap(event) {
+      if (event.target.tagName === "path") {
+        this.province_temp_show.left = event.pageX + "px";
+        this.province_temp_show.top = event.pageY + 25 + "px";
+        this.showName = true;
+      }
+    },
+    clearTempName() {
+      return (this.showName = false);
     }
   }
 };
