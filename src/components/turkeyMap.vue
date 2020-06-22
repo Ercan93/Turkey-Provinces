@@ -1,7 +1,15 @@
 <template>
   <div class="container">
     <div class="turkey-map">
-      <p class="temp-province-name" :style="province_temp_show" v-show="showName">{{province_name}}</p>
+      <p
+        class="temp-province-name"
+        :style="province_temp_show"
+        v-show="showName"
+      >{{temp_province_name}}</p>
+      <div class="selected-province-name">
+        <p v-if="province_name">Seçtiğiniz il : {{province_name}}</p>
+        <p v-else>Henüz bir Şehir seçmediniz.</p>
+      </div>
       <svg
         version="1.1"
         id="svg-turkiye-haritasi"
@@ -506,6 +514,12 @@ export default {
   margin: 0 auto;
   text-align: center;
 }
+.selected-province-name {
+  width: 90vw;
+  height: 10vh;
+  font-size: 1.5em;
+  background-color: #56fca2;
+}
 #svg-turkiye-haritasi {
   width: 100%;
   height: auto;
@@ -515,7 +529,7 @@ export default {
   fill: rgb(13, 6, 27);
 }
 #svg-turkiye-haritasi path:hover {
-  fill: rgb(111, 192, 172);
+  fill: #56fca2;
 }
 .temp-province-name {
   position: absolute;
