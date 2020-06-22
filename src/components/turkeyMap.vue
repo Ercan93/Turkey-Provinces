@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <h1>{{isim}}</h1>
     <div class="turkey-map">
+      <p class="temp-province-name" :style="province_temp_show" v-show="showName">{{province_name}}</p>
       <svg
         version="1.1"
         id="svg-turkiye-haritasi"
@@ -10,6 +10,7 @@
         viewBox="0 0 1007.478 527.323"
         xml:space="preserve"
         @click="selectProvince"
+        @mouseover="showProvinceName"
       >
         <g id="turkiye">
           <g id="adana" data-plakakodu="01" data-alankodu="322" data-iladi="Adana">
@@ -460,7 +461,8 @@
 export default {
   data() {
     return {
-      isim: "Türkiye Cumhuriyeti"
+      province_name: null,
+      temp_province_name: null
     };
   },
   methods: {
@@ -468,6 +470,14 @@ export default {
       if (event.target.tagName === "path") {
         const parent = event.target.parentNode;
         const provinceName = parent.getAttribute("data-iladi");
+        this.province_name = provinceName;
+      }
+    },
+    showProvinceName(event) {
+      if (event.target.tagName === "path") {
+        const parent = event.target.parentNode;
+        const provinceName = parent.getAttribute("data-iladi");
+        this.temp_province_name = provinceName;
       }
     }
   }
@@ -475,7 +485,7 @@ export default {
 </script>
 <style scoped>
 .turkey-map {
-  max-width: 100vw;
+  max-width: 90vw;
   margin: 0 auto;
   text-align: center;
 }
@@ -488,6 +498,17 @@ export default {
   fill: rgb(13, 6, 27);
 }
 #svg-turkiye-haritasi path:hover {
-  fill: #128576;
+  fill: rgb(111, 192, 172);
+}
+.temp-province-name {
+  position: absolute;
+  z-index: 2;
+  display: inline-block;
+  background: #128576;
+  color: #fff;
+  padding: 8px 16px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
 </style>
