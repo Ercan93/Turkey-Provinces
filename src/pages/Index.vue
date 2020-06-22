@@ -1,14 +1,33 @@
 <template>
-  <Layout></Layout>
+  <Layout>
+    <p class="description">{{description}}</p>
+    <turkey-map></turkey-map>
+  </Layout>
 </template>
 
 <script>
+import turkeyMap from "../components/turkeyMap";
 export default {
   metaInfo: {
     title: "Turkey Provinces"
-  }
+  },
+  data() {
+    return {
+      description:
+        "Hakkında bilgi almak istediğiniz ili haritadan seçebilir ya da yukarıdan arama yapabilirsiniz."
+    };
+  },
+  components: { turkeyMap }
 };
 </script>
 
 <style>
+.description {
+  width: 100%;
+  background-color: #128576;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1.5em;
+}
 </style>
