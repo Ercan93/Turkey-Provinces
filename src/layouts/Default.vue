@@ -2,7 +2,7 @@
   <div class="layout">
     <header class="header">
       <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
+        <g-link class="site-name" to="/">{{ $static.metadata.siteName }}</g-link>
       </strong>
       <nav class="nav"></nav>
     </header>
@@ -28,10 +28,7 @@ body {
 }
 
 .layout {
-  max-width: 760px;
   margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .header {
@@ -40,9 +37,15 @@ body {
   align-items: center;
   margin-bottom: 20px;
   height: 80px;
+  background-color: rgb(13, 6, 27);
+  color: #128576;
 }
 
 .nav__link {
   margin-left: 20px;
+}
+.site-name {
+  text-decoration: none;
+  color: #b9fff6;
 }
 </style>
