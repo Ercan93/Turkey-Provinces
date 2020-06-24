@@ -9,7 +9,7 @@
       <div class="selected-province-name">
         <div class="province-show" v-if="province_name">
           <p>Seçtiğiniz il : {{province_name}}</p>
-          <button class="show-detail-button">Detaylara bak</button>
+          <button class="show-detail-button" @click="showProvinceDetail">Detaylara bak</button>
         </div>
         <p v-else>Henüz bir Şehir seçmediniz.</p>
       </div>
@@ -507,6 +507,9 @@ export default {
     },
     clearTempName() {
       return (this.showName = false);
+    },
+    showProvinceDetail() {
+      this.$emit("provinceName", this.province_name);
     }
   }
 };

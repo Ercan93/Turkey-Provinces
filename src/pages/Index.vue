@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <p class="description">{{description}}</p>
-    <turkey-map></turkey-map>
+    <turkey-map @provinceName="province_name"></turkey-map>
   </Layout>
 </template>
 
@@ -11,13 +11,19 @@ export default {
   metaInfo: {
     title: "Turkey Provinces"
   },
+  components: { turkeyMap },
   data() {
     return {
       description:
-        "Hakkında bilgi almak istediğiniz ili haritadan seçebilir ya da yukarıdan arama yapabilirsiniz."
+        "Hakkında bilgi almak istediğiniz ili haritadan seçebilir ya da yukarıdan arama yapabilirsiniz.",
+      province_name_for_profile: ""
     };
   },
-  components: { turkeyMap }
+  methods: {
+    province_name(val) {
+      this.province_name_for_profile = val;
+    }
+  }
 };
 </script>
 
