@@ -7,7 +7,10 @@
         v-show="showName"
       >{{temp_province_name}}</p>
       <div class="selected-province-name">
-        <p v-if="province_name">Seçtiğiniz il : {{province_name}}</p>
+        <div class="province-show" v-if="province_name">
+          <p>Seçtiğiniz il : {{province_name}}</p>
+          <button class="show-detail-button">Detaylara bak</button>
+        </div>
         <p v-else>Henüz bir Şehir seçmediniz.</p>
       </div>
       <svg
@@ -548,5 +551,22 @@ export default {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+}
+.province-show {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.province-show > p {
+  color: rgb(13, 6, 27);
+}
+.show-detail-button {
+  width: 140px;
+  height: 60px;
+  font-size: 20px;
+  background-color: rgb(13, 6, 27);
+  border-radius: 12px;
+  color: white;
+  box-sizing: content-box;
 }
 </style>
