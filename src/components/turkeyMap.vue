@@ -519,10 +519,16 @@ export default {
   height: 10vh;
   font-size: 1.5em;
   background-color: #56fca2;
+  border-radius: 5px;
+  box-shadow: rgb(59, 87, 84) 5px 5px 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 #svg-turkiye-haritasi {
-  width: 100%;
-  height: auto;
+  width: 90vw;
+  background-color: #128576;
+  padding-top: 40px;
+  padding-bottom: -20px;
 }
 #svg-turkiye-haritasi path {
   cursor: pointer;
@@ -535,8 +541,9 @@ export default {
   position: absolute;
   z-index: 2;
   display: inline-block;
-  background: #128576;
-  color: #fff;
+  background: #ffffff;
+  font-weight: bold;
+  color: rgb(13, 6, 27);
   padding: 8px 16px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
