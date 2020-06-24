@@ -2,16 +2,18 @@
   <Layout>
     <p class="description">{{description}}</p>
     <turkey-map @provinceName="province_name"></turkey-map>
+    <province-profile :provinceName="province_name_for_profile"></province-profile>
   </Layout>
 </template>
 
 <script>
 import turkeyMap from "../components/turkeyMap";
+import provinceProfile from "../components/provinceProfile";
 export default {
   metaInfo: {
     title: "Turkey Provinces"
   },
-  components: { turkeyMap },
+  components: { turkeyMap, provinceProfile },
   data() {
     return {
       description:
