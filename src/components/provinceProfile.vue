@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Şehir Adı: {{provinceName}}</h1>
+    <iframe :src="'https://tr.wikipedia.org/wiki/'+provinceName+'_(il)'" class="province-wiki-page"></iframe>
   </div>
 </template>
 <script>
@@ -10,3 +11,10 @@ export default {
   }
 };
 </script>
+<style scoped>
+.province-wiki-page {
+  width: 100%;
+  height: 800px;
+  box-sizing: border-box;
+}
+</style>
