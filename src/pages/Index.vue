@@ -1,18 +1,25 @@
 <template>
   <Layout>
     <div class="container">
-      <p class="description">{{description}}</p>
+      <!-- Button goes selected province profile component. -->
       <button
         v-show="province_name_for_profile"
         class="show-detail-button"
         @click="showProvinceDetail"
       >Detaylara bak</button>
+      <!-- ------------------------------------------------ -->
+
+      <!-- Turkey svg map component -->
       <turkey-map @provinceName="selected_province_name"></turkey-map>
+      <!-- ----------------------- -->
+
+      <!-- The component shows the selected province wiki page. -->
       <province-profile
         id="province-profile"
         v-show="province_name_for_profile"
         :provinceName="province_name_for_profile"
       ></province-profile>
+      <!-- ---------------------------------------------------- -->
     </div>
   </Layout>
 </template>
@@ -27,8 +34,6 @@ export default {
   components: { turkeyMap, provinceProfile },
   data() {
     return {
-      description:
-        "Hakkında bilgi almak istediğiniz ili haritadan seçebilir ya da yukarıdan arama yapabilirsiniz.",
       province_name_for_profile: ""
     };
   },
@@ -53,7 +58,7 @@ export default {
   align-items: center;
 }
 .container > * {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .description {
   width: 100%;

@@ -1,17 +1,24 @@
 <template>
   <div class="container">
     <div class="turkey-map">
+      <!-- The province name element shown on the mouse. -->
       <p
         class="temp-province-name"
         :style="province_temp_show"
         v-show="showName"
       >{{temp_province_name}}</p>
+      <!-- --------------------------------------------- -->
+
+      <!-- The element that shows the selected province name.-->
       <div class="selected-province-name">
         <div class="province-show" v-if="province_name">
           <p>Seçtiğiniz il : {{province_name}}</p>
         </div>
         <p v-else>Henüz bir Şehir seçmediniz.</p>
       </div>
+      <!-- -------------------------------------------------- -->
+
+      <!-- Turkey SVG map element -->
       <svg
         version="1.1"
         id="svg-turkiye-haritasi"
@@ -466,6 +473,7 @@
           </g>
         </g>
       </svg>
+      <!-- ---------------------- -->
     </div>
   </div>
 </template>
@@ -532,6 +540,7 @@ export default {
   background-color: #128576;
   padding-top: 40px;
   padding-bottom: -20px;
+  border-radius: 15px;
 }
 #svg-turkiye-haritasi path {
   cursor: pointer;
@@ -556,6 +565,7 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-radius: 15px;
 }
 .province-show > p {
   color: rgb(13, 6, 27);
