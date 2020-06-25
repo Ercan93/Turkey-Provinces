@@ -1,13 +1,19 @@
 <template>
   <Layout>
-    <p class="description">{{description}}</p>
-    <button class="show-detail-button" @click="showProvinceDetail">Detaylara bak</button>
-    <turkey-map @provinceName="selected_province_name"></turkey-map>
-    <province-profile
-      id="province-profile"
-      v-show="province_name_for_profile"
-      :provinceName="province_name_for_profile"
-    ></province-profile>
+    <div class="container">
+      <p class="description">{{description}}</p>
+      <button
+        v-show="province_name_for_profile"
+        class="show-detail-button"
+        @click="showProvinceDetail"
+      >Detaylara bak</button>
+      <turkey-map @provinceName="selected_province_name"></turkey-map>
+      <province-profile
+        id="province-profile"
+        v-show="province_name_for_profile"
+        :provinceName="province_name_for_profile"
+      ></province-profile>
+    </div>
   </Layout>
 </template>
 
@@ -40,7 +46,15 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container > * {
+  margin-top: 20px;
+}
 .description {
   width: 100%;
   background-color: #128576;

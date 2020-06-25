@@ -13,7 +13,7 @@ export default {
 </script>
 <style scoped>
 .province-wiki-page {
-  width: 100%;
+  width: 90vw;
   height: 800px;
   box-sizing: border-box;
 }
