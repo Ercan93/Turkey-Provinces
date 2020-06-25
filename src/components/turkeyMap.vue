@@ -520,6 +520,10 @@ export default {
 };
 </script>
 <style scoped>
+.container {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
 .turkey-map {
   max-width: 90vw;
   margin: 0 auto;
@@ -528,12 +532,15 @@ export default {
 .selected-province-name {
   width: 90vw;
   height: 10vh;
-  font-size: 1.5em;
+  font-size: 2em;
   background-color: #56fca2;
   border-radius: 5px;
   box-shadow: rgb(59, 87, 84) 5px 5px 10px;
-  font-weight: bold;
+  font-weight: bolder;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 #svg-turkiye-haritasi {
   width: 90vw;

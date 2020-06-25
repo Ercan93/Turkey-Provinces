@@ -2,21 +2,13 @@
   <div class="layout">
     <header class="header">
       <strong>
-        <g-link class="site-name" to="/">{{ $static.metadata.siteName }}</g-link>
+        <g-link class="site-name" to="/">Türkiye İller haritası</g-link>
       </strong>
       <nav class="nav"></nav>
     </header>
     <slot />
   </div>
 </template>
-
-<static-query>
-query {
-  metadata {
-    siteName
-  }
-}
-</static-query>
 
 <style>
 body {
@@ -33,7 +25,8 @@ body {
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  font-size: 3rem;
   align-items: center;
   margin-bottom: 20px;
   height: 80px;

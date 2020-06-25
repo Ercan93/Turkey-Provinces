@@ -16,5 +16,6 @@ export default {
   width: 90vw;
   height: 800px;
   box-sizing: border-box;
+  border-radius: 15px;
 }
 </style>
