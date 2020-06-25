@@ -1,8 +1,13 @@
 <template>
   <Layout>
     <p class="description">{{description}}</p>
-    <turkey-map @provinceName="province_name"></turkey-map>
-    <province-profile :provinceName="province_name_for_profile"></province-profile>
+    <button class="show-detail-button" @click="showProvinceDetail">Detaylara bak</button>
+    <turkey-map @provinceName="selected_province_name"></turkey-map>
+    <province-profile
+      id="province-profile"
+      v-show="province_name_for_profile"
+      :provinceName="province_name_for_profile"
+    ></province-profile>
   </Layout>
 </template>
 
@@ -22,8 +27,14 @@ export default {
     };
   },
   methods: {
-    province_name(val) {
+    selected_province_name(val) {
       this.province_name_for_profile = val;
+    },
+    showProvinceDetail() {
+      setTimeout(() => {
+        var container = this.$el.querySelector("#province-profile");
+        container.scrollIntoView({ behavior: "smooth", block: "end" });
+      }, 500);
     }
   }
 };
@@ -37,5 +48,17 @@ export default {
   text-align: center;
   padding: 10px 0;
   font-size: 1.5em;
+}
+#province-profile {
+  overflow-y: auto;
+}
+.show-detail-button {
+  width: 140px;
+  height: 60px;
+  font-size: 20px;
+  background-color: rgb(13, 6, 27);
+  border-radius: 12px;
+  color: white;
+  box-sizing: content-box;
 }
 </style>

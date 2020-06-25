@@ -9,7 +9,6 @@
       <div class="selected-province-name">
         <div class="province-show" v-if="province_name">
           <p>Seçtiğiniz il : {{province_name}}</p>
-          <button class="show-detail-button" @click="showProvinceDetail">Detaylara bak</button>
         </div>
         <p v-else>Henüz bir Şehir seçmediniz.</p>
       </div>
@@ -18,7 +17,7 @@
         id="svg-turkiye-haritasi"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 0 1007.478 527.323"
+        viewBox="0 0 1007.478 470.323"
         xml:space="preserve"
         @click="selectProvince"
         @mouseover="showProvinceName"
@@ -489,6 +488,7 @@ export default {
         const parent = event.target.parentNode;
         const provinceName = parent.getAttribute("data-iladi");
         this.province_name = provinceName;
+        this.$emit("provinceName", this.province_name);
       }
     },
     showProvinceName(event) {
@@ -507,9 +507,6 @@ export default {
     },
     clearTempName() {
       return (this.showName = false);
-    },
-    showProvinceDetail() {
-      this.$emit("provinceName", this.province_name);
     }
   }
 };
@@ -562,14 +559,5 @@ export default {
 }
 .province-show > p {
   color: rgb(13, 6, 27);
-}
-.show-detail-button {
-  width: 140px;
-  height: 60px;
-  font-size: 20px;
-  background-color: rgb(13, 6, 27);
-  border-radius: 12px;
-  color: white;
-  box-sizing: content-box;
 }
 </style>
