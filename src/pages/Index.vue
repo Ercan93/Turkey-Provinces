@@ -71,7 +71,7 @@ export default {
   color: white;
   text-align: center;
   padding: 10px 0;
-  font-size: 1.5em;
+  font-size: 30px;
 }
 #province-profile {
   overflow-y: auto;

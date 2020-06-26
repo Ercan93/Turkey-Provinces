@@ -20,7 +20,6 @@ body {
     "Helvetica Neue", Arial, sans-serif;
   margin: 0;
   padding: 0;
-  line-height: 1.5;
 }
 
 .layout {
@@ -31,16 +30,15 @@ body {
 .header {
   display: flex;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 2rem;
   align-items: center;
   height: 10vh;
-
   color: #128576;
 }
 
 .nav {
   margin-left: auto;
-  font-size: 2rem;
+  font-size: 1.2rem;
   padding: 10px 20px;
 }
 .nav > * {
@@ -49,6 +47,7 @@ body {
 }
 .site-name {
   text-decoration: none;
+  padding: 10px 20px;
   color: #b9fff6;
 }
 .fade-enter-active {
