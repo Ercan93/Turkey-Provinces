@@ -2,11 +2,13 @@
   <Layout>
     <div class="container">
       <!-- Button goes selected province profile component. -->
-      <button
-        v-show="province_name_for_profile"
-        class="show-detail-button"
-        @click="showProvinceDetail"
-      >Detaylara bak</button>
+      <transition name="bounce">
+        <button
+          v-show="province_name_for_profile"
+          class="show-detail-button"
+          @click="showProvinceDetail"
+        >Detaylara bak</button>
+      </transition>
       <!-- ------------------------------------------------ -->
 
       <!-- Turkey svg map component -->
@@ -56,6 +58,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgb(13, 6, 27);
 }
 .container > * {
   margin-top: 10px;
@@ -72,12 +75,33 @@ export default {
   overflow-y: auto;
 }
 .show-detail-button {
-  width: 140px;
+  cursor: pointer;
+  width: 180px;
   height: 60px;
+  line-height: 60px;
   font-size: 20px;
-  background-color: rgb(13, 6, 27);
+  font-weight: bold;
   border-radius: 12px;
-  color: white;
+  text-align: center;
+  color: rgb(13, 6, 27);
+  border: 2px solid white;
   box-sizing: content-box;
+}
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 </style>
