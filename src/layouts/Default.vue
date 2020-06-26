@@ -4,7 +4,9 @@
       <strong>
         <g-link class="site-name" to="/">Türkiye İller haritası</g-link>
       </strong>
-      <nav class="nav"></nav>
+      <nav class="nav">
+        <g-link to="/About">Hakkında</g-link>
+      </nav>
     </header>
     <slot />
   </div>
@@ -21,6 +23,7 @@ body {
 
 .layout {
   margin: 0 auto;
+  background-color: rgb(13, 6, 27);
 }
 
 .header {
@@ -28,14 +31,18 @@ body {
   justify-content: center;
   font-size: 3rem;
   align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
-  background-color: rgb(13, 6, 27);
+  height: 10vh;
+
   color: #128576;
 }
 
-.nav__link {
-  margin-left: 20px;
+.nav {
+  margin-left: auto;
+  padding: 10px 20px;
+}
+.nav > * {
+  text-decoration: none;
+  color: #128576;
 }
 .site-name {
   text-decoration: none;
