@@ -1,7 +1,7 @@
 # Türkiye illerini harita ve wikipedia sayfalarını görüntüleyebileceğiz web uygulaması.
 
-### Projenin geliştirme ortamının ayağa kaldırılması
+### Projenin geliştirme ortamında ayağa kaldırılması
 `gridsome develop`
 
-### Projenin derlenmesi
+### Projeyi derleme komutu
 `gridsome build`
