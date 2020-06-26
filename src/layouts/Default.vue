@@ -8,7 +8,9 @@
         <g-link to="/About">Hakkında</g-link>
       </nav>
     </header>
-    <slot />
+    <transition name="fade" appear>
+      <slot />
+    </transition>
   </div>
 </template>
 
@@ -48,5 +50,18 @@ body {
 .site-name {
   text-decoration: none;
   color: #b9fff6;
+}
+.fade-enter-active {
+  transition: opacity 2s;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-leave {
+  opacity: 1;
+}
+.fade-leave-active {
+  transition: opacity 2s;
 }
 </style>

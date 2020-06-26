@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout class="layout">
     <div class="container">
       <!-- Button goes selected province profile component. -->
       <transition name="bounce">
@@ -42,12 +42,14 @@ export default {
   methods: {
     selected_province_name(val) {
       this.province_name_for_profile = val;
+      var detailBtn = this.$el.querySelector(".container");
+      detailBtn.scrollIntoView({ behavior: "smooth", block: "start" });
     },
     showProvinceDetail() {
       setTimeout(() => {
         var container = this.$el.querySelector("#province-profile");
         container.scrollIntoView({ behavior: "smooth", block: "end" });
-      }, 500);
+      }, 300);
     }
   }
 };
