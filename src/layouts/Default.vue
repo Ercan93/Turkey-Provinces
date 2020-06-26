@@ -38,6 +38,7 @@ body {
 
 .nav {
   margin-left: auto;
+  font-size: 2rem;
   padding: 10px 20px;
 }
 .nav > * {

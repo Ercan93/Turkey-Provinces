@@ -14,7 +14,7 @@
         <div class="province-show" v-if="province_name">
           <p>Seçtiğiniz il : {{province_name}}</p>
         </div>
-        <p v-else>Henüz bir Şehir seçmediniz.</p>
+        <p v-else>Bilgi almak için haritadan bir il seçiniz.</p>
       </div>
       <!-- -------------------------------------------------- -->
 
