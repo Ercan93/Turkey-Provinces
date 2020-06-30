@@ -5,7 +5,7 @@
         <g-link class="site-name" to="/">Türkiye İller haritası</g-link>
       </strong>
       <nav class="nav">
-        <g-link to="/About">Hakkında</g-link>
+        <g-link to="/about">Hakkında</g-link>
       </nav>
     </header>
     <transition name="fade" appear>
