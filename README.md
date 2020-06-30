@@ -1,7 +1,10 @@
-# Türkiye illerini harita üzerinde ve wikipedia sayfalarını görüntüleyebileceğiz web uygulaması
+## You can receive information about Turkey's provinces.
 
-### Projenin geliştirme ortamında ayağa kaldırılması
+### install dependencies
+`npm install`
+
+### serve with hot reload at localhost:8080
 `gridsome develop`
 
-### Projeyi derleme komutu
+### build for production
 `gridsome build`
