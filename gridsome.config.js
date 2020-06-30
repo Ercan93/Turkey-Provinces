@@ -7,4 +7,6 @@
 module.exports = {
   siteName: "TR Provinces",
   plugins: [],
+   siteUrl: ' https://ercan93.github.io',
+  pathPrefix: '/Turkey-Provinces',
 };
